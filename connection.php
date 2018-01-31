@@ -1,6 +1,6 @@
 <?php
 $username=$_REQUEST['username'];
-$password=$_REQUEST['pass'];
+$password=$_REQUEST['password'];
 $con= mysqli_connect('localhost','root','root', 'ican');
 
 if(!$con)
@@ -13,10 +13,8 @@ else
 	$sql= "select * from student where username='$username' and password='$password' ";
 	
 	if(mysqli_query($con,$sql))
-	{
-		
-	    header('location: homepage.php?student_id'); 
-		
+	{		
+	    header('location: homepage.php?student_id'); 		
 	}
 	else
 	{
