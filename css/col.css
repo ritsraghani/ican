@@ -1,19 +1,19 @@
 /* Main css for div grids and columns */
 
 /* // Extra small devices (portrait phones, less than 576px) */
-    @media (max-width: 575px) {  }
+  @media (max-width: 575px) {  }
 
-    /* // Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) and (max-width: 767px) {  }
+  /* // Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) and (max-width: 767px) {  }
 
-    /* // Medium devices (tablets, 768px and up) */
-    @media (min-width: 768px) and (max-width: 991px) {  }
+  /* // Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) and (max-width: 991px) {  }
 
-    /* // Large devices (desktops, 992px and up) */
+  /* // Large devices (desktops, 992px and up) */
     @media (min-width: 992px) and (max-width: 1199px) {  }
 
-    /* // Extra large devices (large desktops, 1200px and up) */
-    @media (min-width: 1200px) {  }
+  /* // Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {  }
 
 /* media queries */
 
@@ -257,7 +257,7 @@ footer{
     .conatiner-fluid{
     width:100%;
     }
-    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10, .s11, .s12 {
+  .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10, .s11, .s12 {
   float: left;
   position: relative;
   min-height: 1px;

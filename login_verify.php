@@ -1,36 +1,39 @@
 <?php
 require 'connection.php';
 
-$conn = new PDO("mysql:host=$servername;dbname=ican", $username, $password);
-// set the PDO error mode to exception
-$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=ican", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Connected ";
+    }
+catch(PDOException $e){
+    echo "Connection failed: " . $e->getMessage();
+    }
 
-// Escape email to protect against SQL injections
-$email = 'rits.raghani@gmail.com';
-$result = $conn->query("SELECT * FROM student WHERE email_id='rits.raghani@gmail.com' ");
+$email = $_POST['email'];
+$password= $_POST['password'];
 
-if ( $result->num_rows == 0 ){ // User doesn't exist
-    $_SESSION['message'] = "User with that email doesn't exist!";
-    // header("location: error.php");
-    echo "Error";
+$sql="SELECT * FROM student where email_id='$email'";
+$result = $conn->prepare($sql);
+$result->execute();
+$final_results = $result->fetchAll(PDO::FETCH_ASSOC);
+$number_of_rows = $result->rowCount();
+
+if ($number_of_rows == 0 ){ 
+    $message = "User not registered";
+    // echo $message;
+    header('location: register.php');
 }
-else { // User exists
-    $user = $result->fetch_assoc();
-
-    if ( password_verify('ritu1993', $user['password']) ) {
-        
-        // $_SESSION['email'] = $user['email'];
-        // $_SESSION['first_name'] = $user['first_name'];
-        // $_SESSION['last_name'] = $user['last_name'];
-        // $_SESSION['active'] = $user['active'];
+else {
+    if ($final_results[0]['password']==$password) { 
         $_SESSION['logged_in'] = true;
-        echo "Hello" . $email;
-        // header("location: profile.php");
+
+        print_r($final_results);
+        
+        echo "Login Successful";
     }
     else {
-        // $_SESSION['message'] = "You have entered wrong password, try again!";
-        // header("location: error.php");
-        echo "User Not found";
+        echo "Incorrect password";
     }
 }
 

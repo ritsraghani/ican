@@ -1,6 +1,6 @@
 
 
-#username, #password {
+#email, #password,#username ,#phone_no, #gender, #dob {
     padding: 12px; 
     border: 1px solid #ccc;
     border-radius: 4px; /* Rounded borders */
@@ -12,7 +12,23 @@
 
 /* Style the submit button with a specific background color etc */
 #login {
-    background-color: #4CAF50;
+    background-color: #123c69;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit{
+    display: block !important;
+    color:white;
+    border-color:#ac3b61;
+    box-shadow: #45a049; 
+}
+
+#register{
+    background-color: #123c69;
     color: white;
     padding: 12px 20px;
     border: none;
