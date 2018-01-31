@@ -1,24 +1,18 @@
+
 <?php
-$username=$_REQUEST['username'];
-$password=$_REQUEST['password'];
-$con= mysqli_connect('localhost','root','root', 'ican');
+$servername = "localhost";
+$username = "root";
+$password = "root";
 
-if(!$con)
-{
-echo "Connection failed";
-}
-
-else
-{
-	$sql= "select * from student where username='$username' and password='$password' ";
-	
-	if(mysqli_query($con,$sql))
-	{		
-	    header('location: homepage.php?student_id'); 		
-	}
-	else
-	{
-		echo "Login ID or password is incorrect";
-	}
-}
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=ican", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = $conn->prepare("SELECT * FROM student"); 
+    //   echo "Connected successfully"; 
+    }
+    catch(PDOException $e)
+    {
+        echo "Connection failed: " . $e->getMessage();
+    }
 ?>

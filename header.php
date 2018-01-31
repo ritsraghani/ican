@@ -1,4 +1,8 @@
-<?php ?>
+<?php 
+    /* Main page with two forms: sign up and log in */
+    require 'connection.php';
+    session_start();
+?>
 <html>
 <head>
     <title>HomePage</title>
@@ -12,7 +16,7 @@
 
     <div id="menubar">
         <ul class="navbar_list">  
-            <li class="navbar_items s-hide x-hide xs-hide"><a class="active" href="#home">Home</a></li>
+            <li class="navbar_items s-hide x-hide xs-hide"><a class="active" href="homepage.php">Home</a></li>
             <li class="navbar_items s-hide x-hide xs-hide"><a href="#news">News</a></li>
             <li class="navbar_brand"><a href="#"><img src="images/logo.png" id="company_logo" alt="company_logo"></a></li>
             <li class="navbar_items s-hide x-hide xs-hide"><a href="#contact">Contact</a></li>
