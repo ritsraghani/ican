@@ -1,0 +1,129 @@
+/* custom css for all pages */
+
+    body{
+        background-color: #edc7b7;
+        margin:0 !important;
+    }
+
+    .top-margin-page{
+        margin-top: 1%;
+    }
+    #company_logo{
+        width:4.11em;
+        height:3em;
+    }
+
+    #menubar{
+        text-align: center;
+    }
+    
+    #welcome{
+        background-image: url("../images/bg10.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color:#123;
+        height:400px;
+        margin-bottom: 2%;
+    }
+
+    #welcome > h1 {
+        margin-left:7%;
+        font-size: 2.5em;
+        opacity: 1;
+        margin-top:17%;
+    }
+    #welcome > h3 {
+        margin-left:7%;
+        font-size:1.7em;  
+        opacity: 1;
+    }
+
+    #login_btn{        
+        border: 1px solid #AC3B61;
+        margin-right:25px; 
+        margin-top:10px;
+        color:white;
+        background-color: #AC3B61;
+        position: relative;
+        float: right;
+    }
+
+    #send_button{
+        border: 1px solid #edc7b7;  
+        color: #123c69;      
+    }
+
+    #login_btn:hover{
+        background-color: transparent;
+        color:#AC3B61;
+    }
+
+    .navbar_list{ 
+        list-style-type: none;
+        text-align: center;
+        display: inline-block;
+        margin-top:0%;  
+        margin-bottom:0%;
+    }
+
+    .navbar_items {
+        font-size:larger;
+        float: left;
+    }
+
+     .navbar_items a {
+        color: #AC3B61;
+        text-align: center;
+        text-decoration: none;
+        display:inline-block;
+        padding:20px 25px;
+        margin:0px 8px;
+    }
+
+    .navbar_items:hover::after {
+        width: 100%;
+    }
+
+    .navbar_items::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background: #AC3B61;
+        transition: width .3s;
+    }
+    
+
+    .navbar_brand {
+        font-size:larger;
+        float: left;
+        margin:0px 5px;
+    }
+
+    footer{
+        background: rgba(46,74,117,1);
+        background: -moz-linear-gradient(left, rgba(46,74,117,1) 0%, rgba(46,74,117,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(46,74,117,1)), color-stop(100%, rgba(46,74,117,1)));
+        background: -webkit-linear-gradient(left, rgba(46,74,117,1) 0%, rgba(46,74,117,1) 100%);
+        background: -o-linear-gradient(left, rgba(46,74,117,1) 0%, rgba(46,74,117,1) 100%);
+        background: -ms-linear-gradient(left, rgba(46,74,117,1) 0%, rgba(46,74,117,1) 100%);
+        background: linear-gradient(to right, rgba(46,74,117,1) 0%, rgba(46,74,117,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e4a75', endColorstr='#2e4a75', GradientType=1 );
+    }
+
+    #footer{
+        color:#eee2dc;
+        position: relative;
+    }
+
+    .white{
+        color:white;
+    }
+
+    footer label{
+        font-size:1em;
+    }
+
+
+/* custom css for all pages */
