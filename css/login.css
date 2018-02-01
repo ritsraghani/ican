@@ -1,13 +1,45 @@
 
 
-#email, #password,#username ,#phone_no, #gender, #dob {
+#email, #password,#username ,#phone_no, #gender, #dob,#first_name,#last_name {
     padding: 12px; 
     border: 1px solid #ccc;
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top:5px;
+}
+
+.btn {
+  border: 1px solid #ac3b61;
+  color: #ac3b61;
+  background-color:transparent;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload_btn_wrapper:hover{
+    background-color: #ac3b61;
+    border:2px solid white;
+    color:white; 
+    /* cursor: pointer; */
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 50px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 
 /* Style the submit button with a specific background color etc */
