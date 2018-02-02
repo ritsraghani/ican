@@ -1,6 +1,6 @@
 <?php include'header.php' ?>
 
-<form action="email_verify.php" method="POST"  enctype="multipart/form-data">
+<form action="student_registered.php" method="POST"  enctype="multipart/form-data" id="registration">
     <div class="container top-margin-page margin-bottom">
     
         <h2 class="dark-magenta"> Registration Form</h2>
@@ -19,10 +19,9 @@
             <input class="l8 m8 s8 x8 xs8" type="password" id="password" name="password" placeholder="Set Password"> 
 
             <label class="l4 m4 s4 x4 xs4 dark-magenta align-label center-block" for="picture">Upload Picture :</label>
-            <!-- <div class="upload-btn-wrapper"> -->
-            <!-- <button class="btn">Upload a file</button> -->
+
             <input type="file" name="picture" id="picture" />
-            <!-- </div> -->
+
             
         </div>
 
@@ -49,3 +48,9 @@
 </form>    
 
 <?php include'footer.php' ?>
+<script>
+    function clear() {
+         document.getElementById('registration').reset();
+    }
+   
+</script>

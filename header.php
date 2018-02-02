@@ -1,8 +1,7 @@
 <?php 
-    /* Main page with two forms: sign up and log in */
     require 'connection.php';
     session_start();
-?>
+?> 
 <html>
 <head>
     <title>HomePage</title>
@@ -24,7 +23,7 @@
             <li class="navbar_items s-hide x-hide xs-hide"><a href="#contact">Contact</a></li>
             <li class="navbar_items s-hide x-hide xs-hide"><a href="#about">About</a></li>
         </ul>
-        <!-- <form id="search"><input type="text"></form> -->
+       
         <a href="login.php"><button class="button_default" id="login_btn">Login</button></a>
     </div>
 

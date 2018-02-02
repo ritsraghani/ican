@@ -473,4 +473,23 @@ footer{
     line-height:2.5;
     vertical-align: middle; 
    }
+
+   .icons{
+     width:35px;
+     height:35px;
+   }
+
+   .list_items{
+     width:100%;
+     margin:6%;
+     position:relative;
+   }
+   .list_values{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+   }
+   .profile_list{
+     padding: 1% !important;
+   }
 }
