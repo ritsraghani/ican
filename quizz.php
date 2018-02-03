@@ -10,14 +10,31 @@ try {
     $result->execute();
     $final_results = $result->fetchAll(PDO::FETCH_ASSOC);
 
-    $success=1;
+    $success=1; 
+    $i=0;
+    ?>
+<div class="l12 m12 s12 x12 xs12">
 
-    print_r($final_results);
-    // foreach ($final_results as $key => $value) {
-    //     # code...
-    // }
+<?php    
+    
+    foreach ($final_results as $key => $quiz_types) {   ?>
+        <div class="l3 m3 s3 x12 xs12 center-block light-magenta">
+            <a href='quiz_details.php' id="<?php echo $quiz_types['id'];?>">
+                <img src="images/<?php echo $quiz_types['quiz_image'];?>" alt="alt_text">
+            </a>
+            <h4><?php echo $quiz_types['quiz_name'];  $i++; ?> </h4></div> 
+            <?php
+            if($i%4==0){
+                echo "</div>";
+                echo "<div class='l12 m12 s12 x12 xs12'>";
+            }
+    }
+?>
+
+</div>
+
+<?php     
 }
-
 
 catch(PDOException $e){
     $success=0;

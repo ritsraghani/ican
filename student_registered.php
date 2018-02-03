@@ -37,7 +37,7 @@ try {
 
         include('header.php');
         echo "<div class='container center-block' style='min-height:300px;'>";
-        echo "<h2 class='dark-magenta' style='vertical-align:middle;margin-top:10%'>"."Your email id: ".$_SESSION['email'];
+        echo "<h2 class='dark-magenta' style='vertical-align:middle;margin-top:10%'>"."Your email id: ". $email_id;
         echo "<br><br>" . $message . "</h2>";
 
         echo "<br>";

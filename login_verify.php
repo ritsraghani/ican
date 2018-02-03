@@ -68,7 +68,7 @@ else {
             <div>
                 <h4 class="dark-magenta"> Browse through quizz </h4>
                 <div class="quizz">
-                <?php include('quizz.php')?>
+                <?php include('quizz.php');?>
                 </div>
             </div>
         </div>

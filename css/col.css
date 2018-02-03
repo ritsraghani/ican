@@ -228,7 +228,7 @@ footer{
     width: 8.33333333%;
   }
 
-  x-hide{
+  .x-hide{
     display: none !important;
   }
 
