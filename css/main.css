@@ -5,6 +5,17 @@
         margin:0 !important;
     }
 
+    #start_quiz{
+    background-color: transparent;
+    border:1px solid #123;  
+    }
+
+    #start_quiz:hover{
+    background-color: #123c69;
+    border:1px solid #123;
+    color:white;
+    }
+
     .top-margin-page{
         margin-top: 1%;
     }
@@ -125,5 +136,10 @@
         font-size:1em;
     }
 
+    .quiz_image{
+        width: 120px;
+        height:120px;
+    }
+    
 
 /* custom css for all pages */

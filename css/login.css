@@ -1,6 +1,8 @@
 
 
-#email, #password,#username ,#phone_no, #gender, #dob,#first_name,#last_name {
+#email, #password,#username ,#phone_no, #gender, #dob,#first_name,#last_name,#quiz_name,
+#quiz_type, #no_of_questions
+{
     padding: 12px; 
     border: 1px solid #ccc;
     border-radius: 4px; /* Rounded borders */
@@ -8,6 +10,33 @@
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+#add{
+    border:1px solid #123c69;
+}
+
+#add:hover{
+    background-color: #123c69;
+    color:white;
+    border:1px solid white;
+}
+
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 3px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#add_quiz_table td{
+    padding:2% 1% 1% 1%;
+    vertical-align: middle !important;
+    width: 175px;
+    line-height: 1.5;
 }
 
 .upload-btn-wrapper {
@@ -27,11 +56,10 @@
   font-weight: bold;
 }
 
-.upload_btn_wrapper:hover{
+/* .upload_btn_wrapper:hover{
     background-color: #ac3b61;
     border:2px solid white;
     color:white; 
-    /* cursor: pointer; */
 }
 
 .upload-btn-wrapper input[type=file] {
@@ -40,7 +68,7 @@
   left: 0;
   top: 0;
   opacity: 0;
-}
+} */
 
 /* Style the submit button with a specific background color etc */
 #login {

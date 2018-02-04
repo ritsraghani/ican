@@ -19,8 +19,8 @@ try {
     
     foreach ($final_results as $key => $quiz_types) {   ?>
         <div class="l3 m3 s3 x12 xs12 center-block light-magenta">
-            <a href='quiz_details.php' id="<?php echo $quiz_types['id'];?>">
-                <img src="images/<?php echo $quiz_types['quiz_image'];?>" alt="alt_text">
+            <a href='quiz_details.php?id=<?php echo $quiz_types['id'];?>' id="<?php echo $quiz_types['id'];?>">
+                <img src="images/<?php echo $quiz_types['quiz_image'];?>" class="quiz_image" alt="alt_text">
             </a>
             <h4><?php echo $quiz_types['quiz_name'];  $i++; ?> </h4></div> 
             <?php
