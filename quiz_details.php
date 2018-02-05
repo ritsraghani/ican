@@ -51,8 +51,8 @@ try {
 
         <p>Start the Quiz</p>
         <p>Good luck!</p>
-
-        <a href='start_quiz.php?id= <?php echo $quiz_id; ?>' ><button class="button_default dark-blue" id="start_quiz" type="submit">Start Quiz </button></a>
+        <?php $id=$final_results[0]['id']; ?>
+        <a href='start_quiz.php?id=<?php echo $id; ?>' ><button class="button_default dark-blue" id="start_quiz" type="submit">Start Quiz </button></a>
     </div>
 </div>
    
