@@ -1,5 +1,6 @@
 <?php
 require 'connection.php';
+session_start();
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=ican", $username, $password);
@@ -28,17 +29,36 @@ else {
 
     if ($final_results[0]['password']==$password) { 
         $_SESSION['logged_in'] = true;
+        $gender = ($final_results[0]['gender'] == 0) ?  'Female': 'Male';
+        $_SESSION['email'] = $final_results[0]['email_id'];
+        $_SESSION['first_name'] = $final_results[0]['first_name'];
+        $_SESSION['last_name'] =$final_results[0]['last_name'];
+        $_SESSION['message'] = "Registered Successfully";
+        $_SESSION['image']= $final_results[0]['image'];
+        $_SESSION['phone']=$final_results[0]['phone'];
+        $_SESSION['gender']=$gender;
+        $_SESSION['dob']=$final_results[0]['DOB'];
+        // print_r($final_results);
             
     require_once('connection.php');
     include('header.php'); 
     ?>
+
+    <script>
+        $(document).ready(function () {
+            $("#login_btn").val("Logout");
+            $("#login_btn").html("Logout");
+            $("#login_btn").text("Logout");                    
+        });
+    </script>
+
     <div class="container">
 
         <div class="l3 m3 s6 x12 xs12 margin-bottom" style="position:relative;">
             <div style="position:relative;">       
                 <img src="images/student/<?php echo $final_results[0]['image'];?>" style="width:100%;">
-                <div style="left:0; bottom:0; position:absolute;">       
-                <h2 style="color:white;"> <?php echo $final_results[0]['first_name']. ' '. $final_results[0]['last_name']; ?></h2>
+                <div class="profile_image_div">       
+                <h2 class="profile_name"> <?php echo $final_results[0]['first_name']. ' '. $final_results[0]['last_name']; ?></h2>
                 </div>
             </div> 
 

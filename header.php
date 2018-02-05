@@ -1,6 +1,6 @@
 <?php 
     require 'connection.php';
-    session_start();
+    // session_start();
 ?> 
 <html>
 <head>
@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
-    
+    <script src="js/jquery-2.2.4.js"></script>
 
 </head>
 <body>

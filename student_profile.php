@@ -1,27 +1,49 @@
+<?php
+session_start(); 
+if(isset($_SESSION['email'])){
+    // echo "session variables are set.";
+    // print_r($_SESSION);
+
+    include_once('header.php');
+?>
+
+<script>
+    $(document).ready(function () {
+        $("#login_btn").val("Logout");
+        $("#login_btn").html("Logout");
+        $("#login_btn").text("Logout");  
+
+        $("#login_btn").click(function(){
+            <?php session_unset();
+            session_destroy();
+            // $_SESSION['xyz']="I have logged out"; ?>
+        });               
+    });
+</script>
 
 
 <div class="container">
 
     <div class="l3 m3 s6 x12 xs12 margin-bottom" style="position:relative;">
         <div style="position:relative;">       
-            <img src="images/student/<?php echo $image; ?>" style="width:100%;">
-            <div style="left:0; bottom:0; position:absolute;">       
-            <h2 style="color:white;"> <?php echo $f_name. ' '. $l_name; ?></h2>
+            <img src="images/student/<?php echo $_SESSION['image']; ?>" style="width:100%;">
+            <div class="profile_image_div">       
+            <h2 class="profile_name"> <?php echo $_SESSION['first_name']. ' '. $_SESSION['last_name']; ?></h2>
             </div>
         </div> 
 
-       <?php $gender = ($gender==0)?'Male':'Female'; ?>
+
         <ul style="list-style-type:none;" class="profile_list">
-            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/calendar.svg"><?php echo "<span class='list_values'>" . $dob ."</span>";?></div></li>
-            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/genders.svg"><?php echo "<span class='list_values'>" . $gender."</span>";?></div></li>
-            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/smartphone.svg"><?php echo "<span class='list_values'>" . $phone."</span>";?></div></li>
-            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/email.svg"><?php echo "<span class='list_values'>" . $email_id ."</span>";?></div></li>
+            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/calendar.svg"><?php echo "<span class='list_values'>" . $_SESSION['dob'] ."</span>";?></div></li>
+            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/genders.svg"><?php echo "<span class='list_values'>" . $_SESSION['gender']."</span>";?></div></li>
+            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/smartphone.svg"><?php echo "<span class='list_values'>" . $_SESSION['phone']."</span>";?></div></li>
+            <li><div class="list_items dark-magenta"><img class="icons" src="images/icons/email.svg"><?php echo "<span class='list_values'>" . $_SESSION['email'] ."</span>";?></div></li>
         </ul>
   
     </div>
 
     <div class="l9 m9 s6 x12 xs12">
-    <?php echo "<h2 class='dark-magenta'>". "Welcome ".$email_id. "</h2>"; ?>
+    <?php echo "<h2 class='dark-magenta'>". "Welcome ".$_SESSION['email']. "</h2>"; ?>
         <div>
             <h4 class="dark-magenta"> About !can...... Learn More </h4>
             <p class="dark-blue">
@@ -34,7 +56,7 @@
             </p>
         </div>
         <div>
-            <h4 class="dark-magenta"> Browse through quizz </h4>
+            <h4 class="dark-magenta"> Browse through quizz <?php $_SESSION['XYZ']; ?> </h4>
             <div class="quizz">
                <?php include('quizz.php'); ?>
             </div>
@@ -42,3 +64,15 @@
     </div>
 
 </div>
+
+<?php
+include('footer.php');
+}
+
+else{ ?>
+<script>
+    alert("Login first");</script>
+    <?php
+    include_once('login.php');
+}
+?>

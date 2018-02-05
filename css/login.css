@@ -1,7 +1,7 @@
 
 
 #email, #password,#username ,#phone_no, #gender, #dob,#first_name,#last_name,#quiz_name,
-#quiz_type, #no_of_questions
+#quiz_type, #no_of_questions, #search
 {
     padding: 12px; 
     border: 1px solid #ccc;
@@ -10,6 +10,21 @@
     margin-top: 6px; /* Add a top margin */
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+#search{
+    background-color:#edc7b7;
+    border:1px solid #123c69;
+    }
+
+#search_btn{
+    border:1px solid white;
+    color:white;
+}
+#search_btn:hover{
+    border:1px solid #123c69;
+    background-color: transparent;
+    color:#123c69;
 }
 
 #add{

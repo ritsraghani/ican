@@ -1,4 +1,5 @@
 <?php
+// session_start();
 require 'connection.php';
 
 $success=0;
@@ -18,7 +19,7 @@ try {
 <?php    
     
     foreach ($final_results as $key => $quiz_types) {   ?>
-        <div class="l3 m3 s3 x12 xs12 center-block light-magenta">
+        <div class="l3 m3 s3 x12 xs12 center-block light-magenta" id="<?php echo $quiz_types['quiz_name']; ?>">
             <a href='quiz_details.php?id=<?php echo $quiz_types['id'];?>' id="<?php echo $quiz_types['id'];?>">
                 <img src="images/<?php echo $quiz_types['quiz_image'];?>" class="quiz_image" alt="alt_text">
             </a>
