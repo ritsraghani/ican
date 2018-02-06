@@ -1,8 +1,35 @@
 /* custom css for all pages */
 
     body{
-        background-color: #edc7b7;
-        margin:0 !important;
+    background-color: #edc7b7;
+    margin:0 !important;
+    }
+
+    .profile_image_div{
+    left:0;
+    bottom:0;
+    position:absolute;
+    width:100%;
+    background-color:black;
+    opacity:0.7;
+    }
+
+    .profile_name{
+        margin-top:5px;
+        margin-bottom:5px;
+        text-align:center;
+        color:white;
+    }
+
+    #start_quiz{
+    background-color: transparent;
+    border:1px solid #123;  
+    }
+
+    #start_quiz:hover{
+    background-color: #123c69;
+    border:1px solid #123;
+    color:white;
     }
 
     .top-margin-page{
@@ -125,5 +152,10 @@
         font-size:1em;
     }
 
+    .quiz_image{
+        width: 120px;
+        height:120px;
+    }
+    
 
 /* custom css for all pages */

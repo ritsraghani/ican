@@ -1,26 +1,16 @@
 <?php 
+// session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
     if (isset($_POST['login'])) { //user logging in
         require 'login_verify.php';
-        }
-    
+    }    
     elseif (isset($_POST['register'])) { //user registering        
         require 'register.php';        
     }
 }
 ?>
 
-<html>
-<head>
-    <title>HomePage</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/col.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-
-
-</head>
 <body>
 <?php  include('header.php'); ?>
     

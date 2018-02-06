@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'connection.php';
 
 try {
@@ -12,8 +13,8 @@ try {
     $gender=$_POST['gender'];
     $phone=$_POST['phone_no'];
     $target_dir ="images/student/";
-    $image1=$target_dir.basename($_FILES['picture']['name']);
     $image=basename($_FILES['picture']['name']);   
+    $image1=$target_dir.basename($_FILES['picture']['name']);
     $f_name=$_POST['first_name'];
     $l_name=$_POST['last_name'];
     $message='';
@@ -23,27 +24,32 @@ try {
     if($conn->exec($sql)){
     $message ="Registered Successfully";
 
+        $gender = ($gender == 0) ?  'Female': 'Male';
+        $_SESSION['email'] = $email_id;
+        $_SESSION['first_name'] = $f_name;
+        $_SESSION['last_name'] = $l_name;
+        $_SESSION['message'] = "Registered Successfully  ";
+        $_SESSION['image']= $image;
+        $_SESSION['logged_in']=true;
+        $_SESSION['phone']=$phone;
+        $_SESSION['gender']=$gender;
+        $_SESSION['dob']=['dob'];
+        // echo $_SESSION['message'];
     }
     $move=move_uploaded_file($_FILES["picture"]["tmp_name"], $image1);
-    if($move){
-
-        $_SESSION['email'] = $_POST['email'];
-        $_SESSION['first_name'] = $_POST['first_name'];
-        $_SESSION['last_name'] = $_POST['last_name'];
-        $message = "Registered Successfully";
-        $_SESSION['logged_in']=true;
-       
-        $_SESSION['message']="";
-
-        include('header.php');
+    if($move){   
+        include('header.php');     
         echo "<div class='container center-block' style='min-height:300px;'>";
-        echo "<h2 class='dark-magenta' style='vertical-align:middle;margin-top:10%'>"."Your email id: ". $email_id;
-        echo "<br><br>" . $message . "</h2>";
+        echo "<h2 class='dark-magenta' style='vertical-align:middle;margin-top:10%'>"."Your email id: ". $_SESSION['email'];
+        echo "<br><br>" . $_SESSION['message'] . "</h2>";
 
         echo "<br>";
         echo "<a href='login.php'><button class='button_default' style='color:#ac3b61;background-color:transparent;border-color:#ac3b61;'>Login to continue</button></a>";
         echo "</div>";
         include('footer.php');
+    }
+    else{
+        echo "couldn't Move the image";
     }
 }
 
@@ -53,7 +59,19 @@ catch(PDOException $e){
 ?>
 
 
-<?php 
+<script src="js/jquery-2.2.4.js"></script>
 
-?>
+<script>
+    $(document).ready(function () {
+        $("#login_btn").val("Logout");
+        $("#login_btn").html("Logout");
+        $("#login_btn").text("Logout");  
+
+        $("#login_btn").click(function(){
+            <?php session_unset();
+            session_destroy();
+            // $_SESSION['xyz']="I have logged out"; ?>
+        });               
+    });
+</script>
 

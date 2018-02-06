@@ -58,6 +58,9 @@
     .bg-dark-magenta{
         background-color:#ac3b61;
     }
+    .bg-transparent{
+      background-color: transparent;
+    }
 /* colors classes */
 
 *{
@@ -391,6 +394,24 @@ footer{
     border-radius: .25rem;
     cursor: pointer;
     }
+       .icons{
+     width:35px;
+     height:35px;
+   }
+
+   .list_items{
+     width:100%;
+     margin:6%;
+     position:relative;
+   }
+   .list_values{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+   }
+   .profile_list{
+     padding: 1% !important;
+   }
  }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
