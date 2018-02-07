@@ -83,8 +83,6 @@
             $move=move_uploaded_file($_FILES["picture"]["tmp_name"], $image1);
             if($move){
                 $message="Image Moved Successfully";
-                // header('location: quizz.php');
-                // echo $message;
             }
           
 

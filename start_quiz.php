@@ -81,6 +81,7 @@ include ('header.php');
     catch(PDOException $e){
     $success=0;
     $message= "Connection failed: " . $e->getMessage();
+    // echo "error";
     }
 // } 
 
