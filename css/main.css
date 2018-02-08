@@ -5,20 +5,22 @@
     margin:0 !important;
     }
 
+    *{font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;}
+
     .profile_image_div{
-    left:0;
-    bottom:0;
-    position:absolute;
-    width:100%;
-    background-color:black;
-    opacity:0.7;
+        left:0;
+        bottom:0;
+        position:absolute;
+        width:100%;
+        background-color:black;
+        opacity:0.7;
     }
 
     .profile_name{
         margin-top:5px;
         margin-bottom:5px;
         text-align:center;
-        color:white;
+        color:rgb(139, 112, 112);
     }
 
     #start_quiz{
@@ -156,6 +158,107 @@
         width: 120px;
         height:120px;
     }
-    
-
 /* custom css for all pages */
+
+/* start_quiz.php page */
+    .question-ul{
+        margin:2% 0%;
+        font-size: 110%;
+        font-weight: bold;
+        color:#AC3B61;
+        list-style: none;
+        position: relative;
+        overflow: auto;
+    }
+
+    .choice-li{
+        color:#4b729c;
+        font-size: 100%;
+        font-weight: 200;
+        padding:0.5%;
+        line-height: 30px;
+    }
+
+    .option-input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        position: relative;
+        top: 7px;
+        height: 25px;
+        width: 25px;
+        background:#998e92;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 0.5rem;
+        outline: none;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .option-input:hover {
+        background: #40e0d0 ;
+    }
+
+    .option-input:checked {
+        background: #40e0d0;
+    }
+
+    .option-input:checked::before {
+        height: 20px;
+        width: 22px;
+        position: absolute;
+        content: '✔';
+        display: inline-block;
+        font-size: 20px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .option-input:checked::after {
+        background: #40e0d0;
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 100;
+    }
+
+    .option-input.radio {
+        border-radius: 50%;
+    }
+
+    .option-input.radio::after {
+        border-radius: 50%;
+    }
+
+    #submit-quiz{
+        color:white;
+        background-color: #AC3B61;
+        border: 1px solid #AC3B61;
+    }
+
+    #submit-quiz:hover{
+        color:#AC3B61;
+        border: 1px solid #AC3B61;
+        background-color: transparent;
+    }
+
+    #start_quiz_div{
+        background-color: #AC3B61;
+        width:100%;
+        opacity:0.9;
+        margin-left:0 !important;
+        margin-right:0 !important;        
+    }
+
+    .start_q_h1{
+        opacity: 1;
+        color:#edc7b7;
+        font-size: 3em;
+    }
+
+/* start_quiz.php page */
+

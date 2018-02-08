@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/col.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="css/homepage.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/homepage.css"> -->
     <style>
         * {box-sizing:border-box}
 

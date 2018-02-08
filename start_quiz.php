@@ -17,10 +17,6 @@ include ('header.php');
         $result->execute();
         $results = $result->fetchAll(PDO::FETCH_ASSOC);
 
-        // echo "<pre>";
-        // print_r($results);
-        // echo "</pre>";
-
         $final=[];
         $x=0;
         $question_array=[];
@@ -36,6 +32,7 @@ include ('header.php');
             }
             array_push($question_array,$value['question']);
 
+            $final[$x]['choice']['qc_id'][]=$value['qc_id'];
             $final[$x]['choice']['right_choice'][]=$value['right_choice'];
             $final[$x]['choice']['choices'][]=$value['choice'];
             $y++;
@@ -45,45 +42,79 @@ include ('header.php');
             }
         }
 
-        echo "<pre>";
-        print_r($final);
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r($final);
+        // echo "</pre>";
 
-        // echo '<div class="container">';
-        // $no=1;
-        // foreach ($final as $key => $val) {
-            
-        //     foreach ($val['question'] as $key1 => $value1) {
-               
-        //         echo "<h3>";
-        //         if($key1=='question'){
-        //         echo $no. '.     '.$value1;
-        //         $no++;}
-        //         echo "</h3>"; 
-            
-        //     }
+        echo '<div class="row top-margin-page" id="start_quiz_div">';
+        echo '<h1 class="center-block start_q_h1"> Let\'s start the test </h1>';
+        echo '</div>';
+        echo '<div class="container margin-bottom">';
+        $no=1;
+        $x=[];
+        $no_of_questions=[];
+        foreach ($final as $key => $val) {      
+            $id= $val['question']['q_id'];
+            array_push($no_of_questions,$id);
+            echo '<ul id='. $id .' class="question-ul">';
+            foreach ($val['question'] as $key1 => $value1) {               
+                if($key1=='question'){
+                echo $no. '.     '.$value1;
+                $no++;
+                }           
+            }
 
-        //     foreach ($val['choice']['choices'] as $key2 => $value2) {
-            
-        //         echo "<p>".$value2."</p>";
-        //     }
+            $right_choice=[];
+            foreach ($val['choice']['right_choice'] as $key => $value) {
+                $right_choice[]=$value;
+            }
+
+            echo '<form action="">'; 
+            $count=0;
+            foreach ($val['choice']['choices'] as $key2 => $v2) {
+                echo '<li class="choice-li"><input class="option-input radio" type="radio" name="'. $id .'"  value="' . $right_choice[$count] .  '"><label>'. $v2 . '</label></li>';                 
+                $count++;
+            }    
+            echo '</form>';            
+            echo "</ul>";
+        }
+        echo '<button class="button_default" type="submit" name="submit-quiz" id="submit-quiz" onclick="getScore()"> Finish </button>';
+        echo '</div>';
 
 
-       
-        // }
-
-
-
-
+        // print_r($no_of_questions);
 
 
     }
+// }
+
     catch(PDOException $e){
     $success=0;
     $message= "Connection failed: " . $e->getMessage();
-    // echo "error";
     }
-// } 
+
 
 include ('footer.php');
 ?>
+
+<script>
+
+    var no_of_questions =   <?php echo count($no_of_questions);?>;
+    console.log(no_of_questions);
+    
+    for(var y=0; y<no_of_questions; y++)
+        if(radios[y].checked) return radios[y].value; // return the checked value
+    }
+
+    // function getScore(){
+    // var score = 0;
+    // for (var i=0; i<tot; i++)
+    //     if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
+    // return score;
+    // }
+
+    // function returnScore(){
+    // alert("Your score is "+ getScore() +"/"+ tot);
+    // }
+
+</script>
