@@ -98,23 +98,55 @@ include ('footer.php');
 ?>
 
 <script>
-
-    var no_of_questions =   <?php echo count($no_of_questions);?>;
+    var no_of_questions=[];
+    no_of_questions = <?php echo json_encode($no_of_questions); ?>;
     console.log(no_of_questions);
-    
-    for(var y=0; y<no_of_questions; y++)
-        if(radios[y].checked) return radios[y].value; // return the checked value
-    }
 
-    // function getScore(){
-    // var score = 0;
-    // for (var i=0; i<tot; i++)
-    //     if(getCheckedValue("question"+i)===answers[i]) score += 1; // increment only
-    // return score;
-    // }
+  function getScore() {
+    var results=[];
+    $(':radio:checked').each(function(){
+    console.log($(this).val());
+        results.push($(this).val());
+    });  
 
-    // function returnScore(){
-    // alert("Your score is "+ getScore() +"/"+ tot);
-    // }
+    var res=[];
+    var marked=0;
+    var result_array=[];
+    var score=0;
+    var x=0;
+    // for(x=0; x<no_of_questions.length; x++){
+        $('input[type="radio"][name="'+ no_of_questions[x] +'"]:checked').each(function(){
+           if(x<no_of_questions.length){
+                x++;
+                console.log(x);
+           }
+           
+            var marked=$(this).val();
+            if(marked==null){
+                result_array.push("Not answered this question " + x);
+            }
+            if(marked==1) {
+                result_array.push("Correct answer "+x);
+                score +=1;
+            }
+            if(marked==0) {
+                result_array.push("Wrong answer "+x);
+            }
+        });
+
+    // var score=0;
+
+    // results.forEach(function(element) {
+    //     if(element==1){
+    //         score += 1;
+    //     }
+    // }); 
+
+    console.log(score);
+    console.log(result_array)
+    // alert(score);
+       return score + "xyz";
+  }  
+
 
 </script>

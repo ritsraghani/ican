@@ -105,6 +105,10 @@
     <?php include('header.php')?>
 
     <div class="container-fluid" id="welcome">
+
+    </div>
+        
+    <div class="container" id="welcome_text">
         <h1>Welcome to !can</h1>
         <h3>Browse all quizzes here</h3>
     </div>
