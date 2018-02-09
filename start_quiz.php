@@ -81,7 +81,7 @@ include ('header.php');
         echo '<button class="button_default" type="submit" name="submit-quiz" id="submit-quiz" onclick="getScore()"> Finish </button>';
         echo '</div>';
 
-        echo "<div></div>";
+        echo "<div id='result_table' class='container margin-bottom' ></div>";
     }
 // }
 
@@ -100,42 +100,54 @@ include ('footer.php');
     console.log(no_of_questions);
 
   function getScore() {
-    // var results=[];
-    // $(':radio:checked').each(function(){
-    // console.log($(this).val());
-    //     results.push($(this).val());
-    // });  
-
+ 
     var res=[];
     var marked=0;
     var result_array=[];
     var result_analysis=[];
     var score=0;
-    var x=0;
+    var ans='';
     for(x=0; x<no_of_questions.length; x++){
         var marked= $('input[type="radio"][name="'+ no_of_questions[x] +'"]:checked').val();
-            // console.log("x="+x);
-            // console.log("marked= "+ marked);
-            if(marked==null){
-                result_array.push("Not answered this question " + x);
-                var ans ="Not answered this question"
-                result_analysis.push({"q_no":x, "analysis":ans});
-            }
-            if(marked==1) {
-                result_array.push("Correct answer "+x);
-                score +=1;
-            }
-            if(marked==0) {
-                result_array.push("Wrong answer "+x);
-            }
+        console.log("x="+x);
+       
+        if(marked==null){
+            ans ="Not answered";
+            result_analysis.push({q_id:(x+1),analysis:ans});   
         }
+        if(marked==1) {
+            score +=1;
+            ans="Correct answer";
+            result_analysis.push({q_id:(x+1),analysis:ans});   
+        }
+        if(marked==0) {
+            ans="Wrong answer";
+            result_analysis.push({q_id:(x+1),analysis:ans});   
+        }
+    }
 
-    console.log("score=" + score);
-    console.log("result_array=" +result_array)
-    console.log("result_analysis=" +result_analysis)
+    console.log("score=" , score);
+    console.log("result_array=" ,result_array)
+    console.log("result_analysis=", result_analysis)
+
+    var heading ="<h3 class='dark-blue'> Here is your quiz score and it's analysis:</h3>"
+    var score ='<p class="dark-blue">Score is ' +score+ '/'+ no_of_questions.length + '</p>';
+    var table='<table class="dark-blue" id="result_analysis_table">';
+    table +="<thead><th>Question No. </th><th> Result</th></thead>";
+
+    result_analysis.forEach(function (element)  {
+        table +="<tr>";
+        table +="<td>" + element['q_id'] + "</td>";
+        table +="<td>" + element['analysis'] + "</td>";
+        table +="</tr>"
+    });
+
+    $("#result_table").append(heading);
+    $("#result_table").append(score);   
+    $("#result_table").append(table);
     
-    return score + "xyz";
-  }  
+    return;
+}  
 
 
 </script>

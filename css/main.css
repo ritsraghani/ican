@@ -20,7 +20,7 @@
         margin-top:5px;
         margin-bottom:5px;
         text-align:center;
-        color:rgb(139, 112, 112);
+        color:whitesmoke;
     }
 
     #start_quiz{
@@ -245,6 +245,7 @@
         color:white;
         background-color: #AC3B61;
         border: 1px solid #AC3B61;
+        margin-left:15%;
     }
 
     #submit-quiz:hover{
@@ -266,6 +267,26 @@
         color:#edc7b7;
         font-size: 3em;
     }
+
+    #result_analysis_table{
+        text-align:center;
+        line-height:1.5;
+        border-collapse: collapse;
+        width:35%;
+    }
+
+    #result_analysis_table td{
+        border:1px solid #123c69;
+        color:#123c69;
+        padding:1%;
+    }
+
+    #result_analysis_table th{
+    border:1px solid #123c69;
+    color:#123c69;
+    padding:1%;
+    }
+
 
 /* start_quiz.php page */
 
