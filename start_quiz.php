@@ -47,7 +47,7 @@ include ('header.php');
         // echo "</pre>";
 
         echo '<div class="row top-margin-page" id="start_quiz_div">';
-        echo '<h1 class="center-block start_q_h1"> Let\'s start the test </h1>';
+        echo '<h1 class="center-block start_q_h1"> Let\'s start the test...!!</h1>';
         echo '</div>';
         echo '<div class="container margin-bottom">';
         $no=1;

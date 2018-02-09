@@ -11,7 +11,7 @@
         left:0;
         bottom:0;
         position:absolute;
-        width:100%;
+        /* width:100%; */
         background-color:black;
         opacity:0.7;
     }
@@ -20,7 +20,7 @@
         margin-top:5px;
         margin-bottom:5px;
         text-align:center;
-        color:whitesmoke;
+        color:white;
     }
 
     #start_quiz{
@@ -55,15 +55,16 @@
         color:white;
         height:400px;
         margin-bottom: 2%;
-        /* opacity: 0.5; */
+        opacity: 0.6;
         position: relative;
     }
 
     #welcome_text{
         position: absolute;
-        top:10%;  
+        top:15%;  
         left:50%; 
-        color:white; 
+        color:brown; 
+        width: 40%;
     }
     #welcome_text > h1 {
         margin-left:2%;
@@ -72,7 +73,7 @@
     }
     #welcome_text > h3 {
         margin-left:2%;
-        font-size:2em;
+        font-size:2.5em;
     }
 
     #login_btn{        

@@ -110,7 +110,7 @@
         
     <div class="container" id="welcome_text">
         <h1>Welcome to !can</h1>
-        <h3>Browse all quizzes here</h3>
+        <h3>Start Browsing &darr; </h3>
     </div>
 
     <div class="container dark-magenta">
