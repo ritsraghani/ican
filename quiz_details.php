@@ -28,7 +28,7 @@ try {
         <img class="quiz_image" src="images/<?php echo $final_results[0]['quiz_image'];?>">
         <h2 class="dark-blue"><?php echo $final_results[0]['quiz_name']; ?> </h2>
         <h4 class="dark-blue">Type :  <?php echo $quiz_type_name;?></h4>
-        <h4 class="dark-blue">Level :  <?php echo $level;?></h4>
+        <h4 class="dark-blue">Difficulty level :  <?php echo $level;?></h4>
         <h4 class="dark-blue">No. Of Questions :  <?php echo $final_results[0]['no_of_questions'];?></h4>    
         
     </div>
@@ -42,7 +42,7 @@ try {
         </p>
 
         <h3> The Test </h3>
-        <p>The test contains 40 questions and there is no time limit. </p>
+        <p>The test contains <?php echo $final_results[0]['no_of_questions'];?> questions and there is no time limit. </p>
 
         <p>The test is not official, it's just a nice way to see how much you know, or don't know, about <?php echo $final_results[0]['quiz_name']; ?>.</p>
 
