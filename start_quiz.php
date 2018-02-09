@@ -81,10 +81,7 @@ include ('header.php');
         echo '<button class="button_default" type="submit" name="submit-quiz" id="submit-quiz" onclick="getScore()"> Finish </button>';
         echo '</div>';
 
-
-        // print_r($no_of_questions);
-
-
+        echo "<div></div>";
     }
 // }
 
@@ -103,27 +100,26 @@ include ('footer.php');
     console.log(no_of_questions);
 
   function getScore() {
-    var results=[];
-    $(':radio:checked').each(function(){
-    console.log($(this).val());
-        results.push($(this).val());
-    });  
+    // var results=[];
+    // $(':radio:checked').each(function(){
+    // console.log($(this).val());
+    //     results.push($(this).val());
+    // });  
 
     var res=[];
     var marked=0;
     var result_array=[];
+    var result_analysis=[];
     var score=0;
     var x=0;
-    // for(x=0; x<no_of_questions.length; x++){
-        $('input[type="radio"][name="'+ no_of_questions[x] +'"]:checked').each(function(){
-           if(x<no_of_questions.length){
-                x++;
-                console.log(x);
-           }
-           
-            var marked=$(this).val();
+    for(x=0; x<no_of_questions.length; x++){
+        var marked= $('input[type="radio"][name="'+ no_of_questions[x] +'"]:checked').val();
+            // console.log("x="+x);
+            // console.log("marked= "+ marked);
             if(marked==null){
                 result_array.push("Not answered this question " + x);
+                var ans ="Not answered this question"
+                result_analysis.push({"q_no":x, "analysis":ans});
             }
             if(marked==1) {
                 result_array.push("Correct answer "+x);
@@ -132,20 +128,13 @@ include ('footer.php');
             if(marked==0) {
                 result_array.push("Wrong answer "+x);
             }
-        });
+        }
 
-    // var score=0;
-
-    // results.forEach(function(element) {
-    //     if(element==1){
-    //         score += 1;
-    //     }
-    // }); 
-
-    console.log(score);
-    console.log(result_array)
-    // alert(score);
-       return score + "xyz";
+    console.log("score=" + score);
+    console.log("result_array=" +result_array)
+    console.log("result_analysis=" +result_analysis)
+    
+    return score + "xyz";
   }  
 
 
